@@ -6,7 +6,7 @@ The script `src/spotify_dl.py` can be run in interactive mode or CLI mode.
 
 ## Interactive mode
 
-When run without any arguments, interactive mode is used.  The user is prompted for URLs of songs or playlists.  If a playlist is given, the user has the option to download individual songs from that playlist or all of them as well as the ability to see the songs in the playlist prior to making a decision.  The default download directory is the user's `Downloads/` directory, e.g. `C:\Users\[USER]\Downloads\`.  The user is prompted if they want to change the directory prior to downloading the songs.
+When run without any arguments, interactive mode is used.  The user is prompted for URLs of songs or playlists.  If a playlist is given, the user has the option to download individual songs from that playlist or all of them as well as the ability to see the songs in the playlist prior to making a decision.  The default download directory is the user's `Downloads/` directory, e.g. `~/Downloads`.  The user is prompted if they want to change the directory prior to downloading the songs.
 
 ## CLI mode
 
@@ -15,11 +15,11 @@ usage: spotify_dl.py [-h] [-u URLS [URLS ...]] [-f TEMPLATE] [-o OUTPUT] [-c] [-
 
 optional arguments:
   -u URLS [URLS ...], --urls URLS [URLS ...]
-                        URL(s) of Sptofy songs, albums, or playlists to download. If an album or playlist is given, append "|[TRACK NUMBERS]" to URL to specify which tracks to download. Example:
+                        URL(s) of Spotify songs, albums, or playlists to download. If an album or playlist is given, append "|[TRACK NUMBERS]" to URL to specify which tracks to download. Example:
                         'https://open.spotify.com/playlist/mYpl4YLi5T|1,4,15-' to download the first, fourth, and fifteenth to the end. If not specified, all tracks are downloaded.
   -f TEMPLATE, --filename TEMPLATE
                         Specify custom filename. Use the following tags inside quotation marks: {artist}, {title}, {track_num}
-			Example: --filename "{track_num} - {title}". If not specified, filename = "{title} - {artist}". Note that changing this will cause tracks downloaded using a different 
+                        Example: --filename "{track_num} - {title}". If not specified, filename = "{title} - {artist}". Note that changing this will cause tracks downloaded using a different 
                         template to not be recognized.
   -o OUTPUT, --output OUTPUT
                         Path to directory where tracks should be downloaded to
@@ -30,16 +30,16 @@ optional arguments:
                         Path to JSON containing download instructions.
   --retry-failed-downloads RETRY_FAILED_DOWNLOADS
                         Number of times to retry failed downloads.
-  --debug               Debug mode.
+  --debug
 ```
 
 ### Cfg file
 
-Not to be confused with the "config" file below (bad name, I know. I'll change it at some point), The user can define a file named `.spotify_dl.cfg` in their home directory (in Windows, it's `C:\Users\[Your user]\`) to define settings that will always be used by the downloader.  
+Not to be confused with the "config" file below (bad name, I know. I'll change it at some point), The user can define a file named `.spotify_dl.cfg` in their home directory (in macOS, it's `~/`) to define settings that will always be used by the downloader.  
 
 ```
 [Settings]
-default_download_location="C:\Users\me\Desktop\folder"
+default_download_location="~/Downloads"
 ```
 
 Currently, only `default_download_location` is supported
