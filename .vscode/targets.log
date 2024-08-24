@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Fri Aug 23 21:42:02 2024
+
+# Make data base, printed on Fri Aug 23 21:46:13 2024
 
 # Variables
 
@@ -123,8 +126,6 @@ XPC_SERVICE_NAME = application.com.microsoft.VSCode.101373577.104638037
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
-# environment
-VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 +F = $(notdir $+)
 # environment
@@ -152,9 +153,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 58212
+VSCODE_PID = 59566
 # variable set hash-table stats:
-# Load=71/1024=7%, Rehash=0, Collisions=1/95=1%
+# Load=70/1024=7%, Rehash=0, Collisions=1/94=1%
 
 # Pattern-specific Variable Values
 
@@ -162,9 +163,9 @@ VSCODE_PID = 58212
 
 # Directories
 
-# . (device 16777232, inode 106582965): 10 files, no impossibilities.
+# . (device 16777232, inode 106582965): 13 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -190,7 +191,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-08-23 21:25:55
+#  Last modified 2024-08-23 21:44:21
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -208,11 +209,8 @@ spotify_dl:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 2):
 	echo "\n*Building with PyInstaller*\n"
-	python -m venv env
-	./env/Scripts/activate
-	pip install -r requirements.txt
-	./env/Scripts/deactivate
-	pyinstaller src/spotify_dl.py --onefile --paths ./env/Lib/site-packages
+	pip3 install -r requirements.txt
+	pyinstaller src/spotify_dl.py --onefile
 	echo "\nDone"
 	
 
@@ -229,8 +227,6 @@ spotify_dl:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Aug 23 21:42:02 2024
+# Finished Make data base on Fri Aug 23 21:46:13 2024
 
  
-make: *** No rule to make target `all'.  Stop.
-
